@@ -4,9 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Teodor Propistsov — Procurement, Import, Operations. CV and packaging/POS portfolio.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://teodorpro-creator.github.io/">
 <meta property="og:title" content="Teodor Propistsov — CV">
-<meta property="og:description" content="Procurement | Import | Operations · Haifa">
-<meta property="og:image" content="img/p1.jpg">
+<meta property="og:description" content="Procurement | Import | Operations · Haifa, Israel. CV in Hebrew and English, packaging and POS portfolio.">
+<meta property="og:image" content="https://teodorpro-creator.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Teodor Propistsov — Procurement | Import | Operations">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://teodorpro-creator.github.io/img/og.jpg">
+<link rel="icon" href="img/avatar.jpg">
 <title>Teodor Propistsov</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Assistant:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -49,6 +57,9 @@ button:focus-visible { outline: 2px solid var(--cut); outline-offset: 2px; }
 
 .sheet { background: var(--sheet); border: 1px solid var(--line); border-radius: 6px; padding-inline: clamp(18px, 5vw, 48px); padding-block: 36px 40px; }
 
+header.top { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.avatar { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--cut-soft); }
+.who { min-width: 0; flex: 1 1 240px; }
 header.top h1 { font: 700 clamp(30px, 6vw, 44px)/1.1 var(--f-display); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
 .role { font: 500 18px var(--f-display); color: var(--cut); margin-top: 6px; }
 .contacts { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 15px; color: var(--muted); }
@@ -110,12 +121,15 @@ footer { margin-top: 18px; font-size: 13px; color: var(--muted); text-align: cen
   <!-- ===================== HEBREW ===================== -->
   <article class="sheet" lang="he" dir="rtl" id="cv-he">
     <header class="top">
+      <img class="avatar" src="img/avatar.jpg" alt="תאודור פרופיסציוב">
+      <div class="who">
       <h1>תאודור פרופיסציוב</h1>
       <div class="role">רכש | יבוא | תפעול</div>
       <div class="contacts">
         <span>חיפה</span>
         <span><b id="ph1">053-438-3760</b><button type="button" class="copy" data-copy="0534383760">העתקה</button></span>
         <span><b id="em1">Fpropistsov@gmail.com</b><button type="button" class="copy" data-copy="Fpropistsov@gmail.com">העתקה</button></span>
+      </div>
       </div>
     </header>
 
@@ -192,12 +206,15 @@ footer { margin-top: 18px; font-size: 13px; color: var(--muted); text-align: cen
   <!-- ===================== ENGLISH ===================== -->
   <article class="sheet" lang="en" dir="ltr" id="cv-en" hidden>
     <header class="top">
+      <img class="avatar" src="img/avatar.jpg" alt="Teodor Propistsov">
+      <div class="who">
       <h1>Teodor Propistsov</h1>
       <div class="role">Procurement | Import | Operations</div>
       <div class="contacts">
         <span>Haifa, Israel</span>
         <span><b>053-438-3760</b><button type="button" class="copy" data-copy="0534383760">Copy</button></span>
         <span><b>Fpropistsov@gmail.com</b><button type="button" class="copy" data-copy="Fpropistsov@gmail.com">Copy</button></span>
+      </div>
       </div>
     </header>
 
