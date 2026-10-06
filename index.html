@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Teodor Propistsov — Procurement, Import, Operations. CV and packaging/POS portfolio.">
+<meta property="og:title" content="Teodor Propistsov — CV">
+<meta property="og:description" content="Procurement | Import | Operations · Haifa">
+<meta property="og:image" content="img/p1.jpg">
+<title>Teodor Propistsov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Assistant:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one-column CV sheet; die-cut dashed rules divide sections; portfolio as a contact-sheet grid. */
+:root {
+  --paper: #f6f8f9;
+  --sheet: #ffffff;
+  --ink: #15212b;
+  --muted: #5a6873;
+  --line: #d6dee3;
+  --cut: #0a7fae;          /* process cyan, like a dieline */
+  --cut-soft: #e3f2f8;
+  --f-display: "Rubik", "Assistant", system-ui, sans-serif;
+  --f-body: "Assistant", "Rubik", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e161c; --sheet: #141f27; --ink: #e6edf1; --muted: #9aaab5;
+    --line: #2a3a45; --cut: #4fb7e0; --cut-soft: #16303d; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e161c; --sheet: #141f27; --ink: #e6edf1; --muted: #9aaab5;
+  --line: #2a3a45; --cut: #4fb7e0; --cut-soft: #16303d; color-scheme: dark;
+}
+
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 860px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 56px; }
+
+.bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--sheet); }
+.seg button { font: 600 15px var(--f-body); border: 0; background: transparent; color: var(--muted); padding: 7px 16px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--cut); color: var(--sheet); }
+.btn { text-decoration:none; display:inline-block; font: 600 15px var(--f-body); border: 1px solid var(--cut); color: var(--cut); background: var(--sheet); border-radius: 999px; padding: 7px 16px; cursor: pointer; }
+.btn:hover { background: var(--cut-soft); }
+button:focus-visible { outline: 2px solid var(--cut); outline-offset: 2px; }
+.status { font-size: 13px; color: var(--muted); min-height: 1em; }
+
+.sheet { background: var(--sheet); border: 1px solid var(--line); border-radius: 6px; padding-inline: clamp(18px, 5vw, 48px); padding-block: 36px 40px; }
+
+header.top h1 { font: 700 clamp(30px, 6vw, 44px)/1.1 var(--f-display); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.role { font: 500 18px var(--f-display); color: var(--cut); margin-top: 6px; }
+.contacts { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 15px; color: var(--muted); }
+.contacts span { display: inline-flex; gap: 6px; align-items: center; }
+.contacts b { color: var(--ink); font-weight: 600; user-select: all; direction: ltr; unicode-bidi: isolate; }
+.copy { font: 600 12px var(--f-body); border: 1px solid var(--line); background: transparent; color: var(--muted); border-radius: 4px; padding: 1px 7px; cursor: pointer; }
+
+section { margin-top: 30px; }
+section > h2 { font: 700 13px var(--f-display); text-transform: uppercase; letter-spacing: 0.12em; color: var(--cut); margin: 0 0 12px; padding-bottom: 8px;
+  background-image: linear-gradient(to right, var(--cut) 55%, transparent 0); background-size: 9px 1.5px; background-repeat: repeat-x; background-position: bottom; }
+[dir="rtl"] section > h2 { letter-spacing: 0.02em; font-size: 15px; }
+p.summary { margin: 0; max-width: 68ch; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.skills li { font-size: 14px; border: 1px solid var(--line); border-radius: 4px; padding: 2px 9px; }
+
+.job { margin-top: 18px; }
+.job:first-of-type { margin-top: 0; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; align-items: baseline; }
+.job-head h3 { font: 700 18px var(--f-display); margin: 0; }
+.dates { font: 500 13px var(--f-mono); color: var(--muted); direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+.job-role { font-weight: 600; color: var(--ink); margin-top: 2px; }
+.job-note { font-size: 14px; color: var(--muted); }
+.job ul { margin: 8px 0 0; padding-inline-start: 18px; }
+.job li { margin-top: 3px; max-width: 72ch; }
+.job li::marker { color: var(--cut); }
+
+.rows { display: grid; gap: 6px; }
+.rows div { display: flex; gap: 10px; flex-wrap: wrap; }
+.rows .k { font-weight: 700; min-width: 7ch; }
+
+.pf-intro { margin: 0 0 14px; color: var(--muted); max-width: 68ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+figure { margin: 0; min-width: 0; }
+figure .ph { aspect-ratio: 4 / 5; max-width: 100%; border-radius: 4px; overflow: hidden; background: var(--paper); border: 1px dashed var(--line); }
+figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+figcaption { font-size: 14px; margin-top: 6px; line-height: 1.35; }
+figcaption b { display: block; font-family: var(--f-display); font-weight: 500; }
+
+footer { margin-top: 18px; font-size: 13px; color: var(--muted); text-align: center; }
+@media (prefers-reduced-motion: no-preference) { .btn, .seg button { transition: background .15s, color .15s; } }
+</style>
+
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Language">
+      <button type="button" id="b-he" data-l="he">עברית</button>
+      <button type="button" id="b-en" data-l="en">English</button>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <a class="btn" id="dl-he" data-he href="cv-he.pdf" download="Teodor_Propistsov_CV_HE.pdf">הורדת קורות חיים (PDF)</a>
+      <a class="btn" id="dl-en" data-en href="cv-en.pdf" download="Teodor_Propistsov_CV_EN.pdf">Download CV (PDF)</a>
+    </div>
+  </div>
+
+  <!-- ===================== HEBREW ===================== -->
+  <article class="sheet" lang="he" dir="rtl" id="cv-he">
+    <header class="top">
+      <h1>תאודור פרופיסציוב</h1>
+      <div class="role">רכש | יבוא | תפעול</div>
+      <div class="contacts">
+        <span>חיפה</span>
+        <span><b id="ph1">053-438-3760</b><button type="button" class="copy" data-copy="0534383760">העתקה</button></span>
+        <span><b id="em1">Fpropistsov@gmail.com</b><button type="button" class="copy" data-copy="Fpropistsov@gmail.com">העתקה</button></span>
+      </div>
+    </header>
+
+    <section><h2>תקציר</h2>
+      <p class="summary">רכז רכש ויבוא עם ניסיון של יותר משלוש שנים, כולל ניסיון בישראל בקמעונאות המזון. מנוסה בתיאום מול ספקים בארץ ובחו"ל, בטיפול במסמכי יבוא, בניתוח נתוני מכירות ומלאי ובעבודה עם Priority ו-Retalix. בעבר עבדתי בחברת אלכוהול בינלאומית ברכש, במכרזים ובפיתוח וייצור אריזות ומוצרי קד"מ למותגים בינלאומיים. לומד מהר, אוהב לעבוד מול אנשים ולקבל החלטות. מחפש תפקיד ברכש, ביבוא, בלוגיסטיקה או בתפעול.</p>
+    </section>
+
+    <section><h2>מיומנויות</h2>
+      <ul class="skills"><li>Priority</li><li>Retalix Head Office</li><li>Pricez</li><li>MRP</li><li>שליטה טובה באקסל</li><li>ניהול ספקים ומו״מ</li><li>מכרזים</li><li>תיאום יבוא ומסמכים</li><li>תמחור</li><li>ניתוח נתוני מכירות ומלאי</li><li>פיתוח אריזות ומוצרי קד"מ</li><li>ניהול פרויקטים</li></ul>
+    </section>
+
+    <section><h2>ניסיון מקצועי</h2>
+      <div class="job">
+        <div class="job-head"><h3>קשת טעמים</h3><span class="dates">11.2025 – היום</span></div>
+        <div class="job-role">רכז רכש ויבוא (התחלתי כעוזר רכש)</div>
+        <ul>
+          <li>הצטרפתי לחברה כעוזר רכש, ועבדתי ישירות מול סגן המנהל הכללי בניתוח מכירות, רכש ומחירים מול המתחרים בשוק.</li>
+          <li>לאחר 4 חודשים קיבלתי קידום ואחריות על תחום היבוא בחברה.</li>
+          <li>טיפול במסמכי יבוא ותיאום מול ספקים.</li>
+          <li>המשימה המרכזית שלי היא שיפור וניתוח יעילות המכירות.</li>
+          <li>איתרתי והסרתי מהמלאי מעל 6,000 מוצרים עם מכירות נמוכות או ללא מכירות בכלל.</li>
+          <li>ניתחתי את מיקום החברה בשוק הישראלי, והתאמתי את המיצוב שלנו מול רשתות שאינן כשרות שפועלות בשבת.</li>
+          <li>פיתחתי שיטת עבודה להסרת מוצרים שלא מספיק טובים עבור הרשת.</li>
+          <li>אספתי נתונים על מעל 10,000 מוצרים והשלמתי אותם במערכת.</li>
+          <li>שיפרתי את התקשורת מול מחלקות אחרות בחברה, כולל כספים, משפטית וחשבונאות.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head"><h3>טיב טעם</h3><span class="dates">06.2025 – 11.2025</span></div>
+        <div class="job-role">מנהל הזמנות אונליין</div>
+        <ul>
+          <li>ניהלתי צוות של 20 עד 35 עובדים, בהתאם ליום בשבוע וכמות ההזמנות (בממוצע 200 הזמנות ביום רגיל בארבע עמדות ליקוט, ועד 350 הזמנות בימי שיא בשלוש עמדות).</li>
+          <li>בשבועות הראשונים בתפקיד, בדקתי לעומק את תהליך הליקוט בשטח ואיתרתי את הבעיות העיקריות שפגעו ביעילות.</li>
+          <li>שיפרתי את יעילות תהליך הליקוט וצמצמתי טעויות והחזרות, והורדתי את אי שביעות רצון הלקוחות מ־25% לפחות מ־10%.</li>
+          <li>עבדתי מול הנהגים כדי לשפר את התיאום ולצמצם טעויות במסירת ההזמנות.</li>
+          <li>פיתחתי שיטת עבודה למציאת הזמנות של אוכל מוכן, שקיצרה את זמן הליקוט של כל הזמנה.</li>
+          <li>הובלתי תהליך ייעול ואוטומציה בעבודת המחלקה, ושיפרתי את התקשורת מול מחלקות אחרות.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head"><h3>חברת בלוגה</h3><span class="dates">2020 – 2023</span></div>
+        <div class="job-role">רכש ופיתוח אריזות ומוצרי קד"מ</div>
+        <div class="job-note">חברה מובילה בשוק המקומי והבינלאומי, מוסקבה, רוסיה</div>
+        <ul>
+          <li>ניהול רכש מול ספקים בינלאומיים, משא ומתן על חוזים, וטיפול מלא בתהליך הרכש מהדרישה ועד האספקה.</li>
+          <li>חסכון של יותר מ־20% בתקציב השנתי באמצעות מכרזים ותנאים משופרים מול ספקים.</li>
+          <li>פיתוח וייצור אריזות שיווקיות, מארזי מתנה וסטנדים מקרטון ומתכת למותגי אלכוהול בינלאומיים, בתקציב שנתי של מעל 300,000 דולר.</li>
+          <li>בחירת ספקים וקבלני ייצור דרך מכרזים, כולל איתור ספקים חדשים; אישור דוגמאות ובקרת ייצור.</li>
+          <li>איתור פריטי זכוכית ודקור, תיאום לוגיסטיקה ותקשורת מול הספקים.</li>
+          <li>ניהול מלאי, בקרת מסמכים ותיאום משלוחים בינלאומיים.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section><h2>תיק עבודות</h2>
+      <p class="pf-intro">פרויקטים שפיתחתי והפקתי בחברת בלוגה עבור מותגים בינלאומיים, 2020–2023: אריזות, מארזי מתנה, סטנדים ומוצרי קד"מ.</p>
+      <div class="grid" data-pf="he"></div>
+    </section>
+
+    <section><h2>השכלה וקורסים</h2>
+      <div class="rows">
+        <div><span class="k">MBA</span><span>אוניברסיטת אריאל, ישראל · <span class="dates">2023</span></span></div>
+        <div><span class="k">LL.B</span><span>תואר ראשון במשפטים, אוניברסיטת סנט ג׳ון, מוסקבה · <span class="dates">2020</span></span></div>
+        <div><span class="k">גבהים</span><span>טכנולוגיה בעיר · <span class="dates">2024</span></span></div>
+        <div><span class="k">אולפן</span><span>אולפן עציון, סיימתי בהצלחה רמה ג׳</span></div>
+      </div>
+    </section>
+
+    <section><h2>שפות</h2>
+      <div class="rows"><div><span><b>אנגלית</b> רמה גבוהה · <b>עברית</b> רמה בינונית · <b>רוסית</b> שפת אם</span></div></div>
+    </section>
+  </article>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <article class="sheet" lang="en" dir="ltr" id="cv-en" hidden>
+    <header class="top">
+      <h1>Teodor Propistsov</h1>
+      <div class="role">Procurement | Import | Operations</div>
+      <div class="contacts">
+        <span>Haifa, Israel</span>
+        <span><b>053-438-3760</b><button type="button" class="copy" data-copy="0534383760">Copy</button></span>
+        <span><b>Fpropistsov@gmail.com</b><button type="button" class="copy" data-copy="Fpropistsov@gmail.com">Copy</button></span>
+      </div>
+    </header>
+
+    <section><h2>Summary</h2>
+      <p class="summary">Procurement and import coordinator with 3+ years of experience, including Israeli food retail. Experienced in coordinating with local and international suppliers, handling import documentation, analyzing sales and inventory data, and working with Priority and Retalix. Previously worked for an international alcohol company in procurement, tenders, and the development and production of packaging and POS materials for international brands. Fast learner who enjoys working with people and making decisions. Seeking a role in procurement, import, logistics or operations.</p>
+    </section>
+
+    <section><h2>Skills</h2>
+      <ul class="skills"><li>Priority</li><li>Retalix Head Office</li><li>Pricez</li><li>MRP</li><li>Advanced Excel</li><li>Supplier management &amp; negotiation</li><li>Tenders</li><li>Import coordination &amp; documentation</li><li>Pricing</li><li>Sales &amp; inventory analysis</li><li>Packaging &amp; POS development</li><li>Project management</li></ul>
+    </section>
+
+    <section><h2>Experience</h2>
+      <div class="job">
+        <div class="job-head"><h3>Keshet Teamim</h3><span class="dates">11.2025 – Present</span></div>
+        <div class="job-role">Procurement &amp; Import Coordinator (started as Procurement Assistant)</div>
+        <ul>
+          <li>Joined as a procurement assistant, reporting directly to the Deputy CEO on sales, procurement and competitor price analysis.</li>
+          <li>Promoted after 4 months and given responsibility for the company's import operations.</li>
+          <li>Handle import documentation and coordinate with suppliers.</li>
+          <li>Main focus: analyzing and improving sales efficiency.</li>
+          <li>Identified and removed over 6,000 low-selling or non-selling items from inventory.</li>
+          <li>Analyzed the company's position in the Israeli market and adjusted positioning against non-kosher chains open on Shabbat.</li>
+          <li>Developed a method for removing underperforming products from the chain.</li>
+          <li>Collected and completed data for over 10,000 products in the system.</li>
+          <li>Improved communication with other departments, including finance, legal and accounting.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head"><h3>Tiv Taam</h3><span class="dates">06.2025 – 11.2025</span></div>
+        <div class="job-role">Online Orders Manager</div>
+        <ul>
+          <li>Managed a team of 20–35 employees depending on day and order volume (about 200 orders on a regular day across 4 picking stations, up to 350 on peak days across 3).</li>
+          <li>In the first weeks, reviewed the picking process on the floor and identified the main efficiency problems.</li>
+          <li>Improved picking efficiency, reduced errors and returns, and cut customer dissatisfaction from 25% to under 10%.</li>
+          <li>Worked with drivers to improve coordination and reduce delivery errors.</li>
+          <li>Developed a method for locating ready-meal orders, reducing picking time per order.</li>
+          <li>Led efficiency and automation improvements in the department and improved communication with other departments.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head"><h3>Beluga Group</h3><span class="dates">2020 – 2023</span></div>
+        <div class="job-role">Procurement &amp; Packaging / POS Development</div>
+        <div class="job-note">A leading company in local and international markets, Moscow, Russia</div>
+        <ul>
+          <li>Managed procurement with international suppliers, contract negotiation, and the full process from requisition to delivery.</li>
+          <li>Saved over 20% of the annual budget through tenders and improved supplier terms.</li>
+          <li>Developed and produced marketing packaging, gift sets and cardboard and metal displays for international alcohol brands, with an annual budget of over $300,000.</li>
+          <li>Selected suppliers and manufacturers through tenders, including sourcing new suppliers; approved samples and controlled production.</li>
+          <li>Sourced glassware and decor items, coordinated logistics and supplier communication.</li>
+          <li>Managed inventory, document control and international shipments.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section><h2>Portfolio</h2>
+      <p class="pf-intro">Projects I developed and produced at Beluga Group for international brands, 2020–2023: packaging, gift sets, displays and promotional items.</p>
+      <div class="grid" data-pf="en"></div>
+    </section>
+
+    <section><h2>Education &amp; Courses</h2>
+      <div class="rows">
+        <div><span class="k">MBA</span><span>Ariel University, Israel · <span class="dates">2023</span></span></div>
+        <div><span class="k">LL.B</span><span>Bachelor of Laws, St. John's University, Moscow · <span class="dates">2020</span></span></div>
+        <div><span class="k">Gvahim</span><span>Tech in the City · <span class="dates">2024</span></span></div>
+        <div><span class="k">Ulpan</span><span>Ulpan Etzion, Level C (Gimel) completed</span></div>
+      </div>
+    </section>
+
+    <section><h2>Languages</h2>
+      <div class="rows"><div><span><b>English</b> high level · <b>Hebrew</b> intermediate · <b>Russian</b> native</span></div></div>
+    </section>
+  </article>
+
+  <footer><span data-he>קורות חיים זמינים גם כ-PDF בכפתור למעלה</span><span data-en>The CV is also available as a PDF from the button at the top</span></footer>
+</div>
+
+<script>
+const PF = [
+  ["img/p1.jpg", "Noy 1877 Araspel", "מארז מתנה לקוניאק עם בקבוק כיס", "Cognac gift box with hip flask"],
+  ["img/p2.jpg", "Barceló", "מארז מבצע: רום ופחית מיקסר עם ידית נשיאה", "On-pack: rum and mixer can with carry handle"],
+  ["img/p3.jpg", "Torres 10", "צווארון פרסומי לבקבוק", "Promotional neck hanger"],
+  ["img/p4.jpg", "Fireball", "סטנד רצפה ומוצרי קד\"מ לנקודת מכירה", "Floor display and POS materials"],
+  ["img/p5.jpg", "Fireball Pong", "מארז מתנה עם כוסות למשחק", "Gift set with party cups"],
+  ["img/p6.jpg", "Monkey Shoulder", "אריזת מתנה לוויסקי", "Whisky gift pack"],
+  ["img/p7.jpg", "Grant's", "קלפי משחק ממותגים", "Branded playing cards"],
+  ["img/p8.jpg", "Barceló", "אריזות מתנה לרום", "Rum gift boxes"],
+];
+document.querySelectorAll("[data-pf]").forEach(g => {
+  const he = g.dataset.pf === "he";
+  for (const [src, brand, cHe, cEn] of PF) {
+    const f = document.createElement("figure");
+    const ph = document.createElement("div"); ph.className = "ph";
+    const im = document.createElement("img"); im.src = src; im.loading = "lazy"; im.alt = brand + " – " + (he ? cHe : cEn);
+    ph.append(im);
+    const cap = document.createElement("figcaption");
+    const b = document.createElement("b"); b.textContent = brand; b.dir = "ltr";
+    cap.append(b, document.createTextNode(he ? cHe : cEn));
+    f.append(ph, cap); g.append(f);
+  }
+});
+
+let lang = "he";
+function setLang(l) {
+  lang = l;
+  document.getElementById("cv-he").hidden = l !== "he";
+  document.getElementById("cv-en").hidden = l !== "en";
+  document.querySelectorAll("[data-he]").forEach(e => e.hidden = l !== "he");
+  document.querySelectorAll("[data-en]").forEach(e => e.hidden = l !== "en");
+  document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.l === l)));
+  document.documentElement.lang = l;
+    try { localStorage.setItem("cv-lang", l); } catch (e) {}
+}
+document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.l)));
+let start = "he";
+if (location.hash === "#en") start = "en";
+else { try { start = localStorage.getItem("cv-lang") || "he"; } catch (e) {} }
+setLang(start === "en" ? "en" : "he");
+
+document.querySelectorAll(".copy").forEach(btn => btn.addEventListener("click", async () => {
+  const label = btn.textContent;
+  try { await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent = lang === "he" ? "הועתק" : "Copied"; }
+  catch (e) {
+    const t = btn.previousElementSibling; const r = document.createRange(); r.selectNodeContents(t);
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  setTimeout(() => btn.textContent = label, 1500);
+}));
+
+</script>
+
+</body>
+</html>
